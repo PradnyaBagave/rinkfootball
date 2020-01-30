@@ -34,7 +34,6 @@ export default {
 			'jwtToken'
 		)
 		let getUser = JSON.parse(localStorage.getItem('newUser'))
-
 		if (getUser !== null) {
 			this.$store.state.user = getUser
 		}

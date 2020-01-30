@@ -3,6 +3,7 @@
 		<b-col cols="12">
 			<b-jumbotron>
 				<b-row>
+					{{images}}
 					<b-col
 						cols="12">
 						<b-media>
@@ -47,9 +48,9 @@ import { mapGetters } from 'vuex'
 export default {
 	name: 'ImageList',
 	computed: {
-		...mapGetters({
-			user: 'user',
-		})
+		user(){
+          return JSON.parse(localStorage.getItem('newUser'))
+      }
 	},
 	data () {
 		return {
@@ -72,6 +73,9 @@ export default {
 			})
 				.then(response => {
 					this.images = response.data
+					if (this.images.length==0) {
+            this.$store.dispatch("player/setNoImage", true);
+          }
 				})
 				.catch(e => {
 					this.errors.push(e)

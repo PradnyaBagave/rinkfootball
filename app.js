@@ -9,7 +9,10 @@ var ideas = require('./routes/ideas');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
 var uploads = require('./routes/uploads');
-
+var player = require("./routes/player");
+var team = require("./routes/team.routes.js");
+var official=require("./routes/officials.routes.js");
+var teamselected = require("./routes/teamselected.routes.js");
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/mevn-boilerplate', { useNewUrlParser: true, promiseLibrary: require('bluebird') })
@@ -36,6 +39,10 @@ app.use('/ideas', ideas);
 app.use('/users', users);
 app.use('/api/auth', auth);
 app.use('/uploads', uploads);
+app.use('/player',player);
+app.use('/team',team);
+app.use('/official',official);
+app.use('/teamsel',teamselected);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

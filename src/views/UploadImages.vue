@@ -7,7 +7,7 @@
 						<b-card
 							no-body
 							tag="article"
-							class="dashboard mb-4">
+							class="dashboard mb-2">
 							<b-tabs card>
 								<b-tab title="Image uploader">
 									<b-media>
@@ -96,9 +96,9 @@ export default {
 		PulseLoader,
 	},
 	computed: {
-		...mapGetters({
-			user: 'user',
-		})
+		 user(){
+          return JSON.parse(localStorage.getItem('newUser'))
+      }
 	},
 	data () {
 		return {
