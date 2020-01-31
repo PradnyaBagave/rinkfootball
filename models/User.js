@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var passportlocalmongoose=require("passport-local-mongoose");
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
