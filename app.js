@@ -16,7 +16,7 @@ var official=require("./routes/officials.routes.js");
 var teamselected = require("./routes/teamselected.routes.js");
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/mevn-boilerplate', { useNewUrlParser: true, promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb+srv://pradnya:prad@cluster0-dzpvu.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
